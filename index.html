@@ -89,10 +89,21 @@
 
         <div class='options-component'>
             <div class='navigation-container'>
-                <div class='arrow-left-wrapper'></div>
-                <div class='menu-wrapper'></div>
+                <div class='arrow-left-wrapper'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" /></svg>
+                </div>
+                <div class='menu-wrapper'>
+                    <!--      vertical menu svg    -->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                </div>
             </div>
-            <h1>Options</h1>
+            <p>Options</p>
             <div class='general-options-c'>
                 <div class='heading'>
                     <span>General</span>
@@ -110,22 +121,26 @@
                 </div>
             </div>
             <div class='timer-length-c'>
-                <div class='focus-length-c'>
-                    <span>Focus Length</span>
-                    <span>20 minutes</span>
-                </div>
-                <div class='short-break-c'>
-                    <span>Short Break Length</span>
-                    <span>3 minutes </span>
-                </div>
-                <div class='long-break-c'>
-                    <span>Long Break Length</span>
-                    <span>20 minutes </span>
+                <p>Timer Length</p>
+                <div class='wrapper'>
+                    <div class='focus-length-c'>
+                        <span>Focus Length</span>
+                        <span>20 minutes</span>
+                    </div>
+                    <div class='short-break-c'>
+                        <span>Short Break Length</span>
+                        <span>3 minutes </span>
+                    </div>
+                    <div class='long-break-c'>
+                        <span>Long Break Length</span>
+                        <span>20 minutes </span>
+                    </div>
                 </div>
             </div>
             <button>Apply</button>
         </div>
     </div>
+
 
 </body>
 
