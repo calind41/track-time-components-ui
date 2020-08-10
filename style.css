@@ -23,6 +23,8 @@ body {
   font-family: sans-serif;
 }
 .container {
+  width: 60%;
+  margin: auto;
   display: flex;
   margin-top: 50px;
   justify-content: space-around;
@@ -33,6 +35,7 @@ body {
   border-radius: 30px;
   width: 250px;
   height: 500px;
+  user-select: none;
 }
 .time-container {
   border: 1px solid transparent;
@@ -47,6 +50,7 @@ body {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 .time-container .settings svg {
   fill: #fff;
@@ -80,10 +84,10 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 90%;
-/*   border: 1px solid red; */
   height: 50px;
   margin: auto;
   margin-top: 14px;
+  cursor: pointer;
 }
 .dates-container .date {
   width: 15%;
@@ -112,12 +116,14 @@ body {
 }
 
 .play-pause-btn-c {
-/*   border: 1px solid red; */
   height: 120px;
   width: 100%;
+  cursor: pointer;
+  position: relative;
+  bottom: 10px;
 }
 .play-pause-btn-c > div:nth-child(1) {
-  border: 1px solid #737B8C;
+/*   border: 1px solid #737B8C; */
   height: 70px;
   width: 70px;
   border-radius: 100%;
@@ -126,6 +132,9 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 9px 10px 14px -10px rgba(115,123,140,1),-10px 10px 14px -10px rgba(255,255,255,1);
+
+
 }
 .play-pause-btn-c > div:nth-child(1) {
   display: flex;
@@ -144,17 +153,16 @@ body {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 85px;
-  border-radius: 30px;
+  height: 78px;
+  border-radius: 25px;
   background-color: #221F1F;
   color: #fff;
   position: relative;
-  bottom: 34px;
+  bottom: 27px;
 }
 .progress-container > div {
-  border: 1px solid #737B8C;
-  width: 93px;
-  height: 43px;
+  width: 92px;
+  height: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,6 +170,8 @@ body {
   color: #fff;
   font-size: 13px;
   border-radius: 8px;
+  border: 1.8px solid black;
+  box-shadow: 0px 0px 10px -2px rgba(87,87,87,1);
 }
 
 
@@ -182,6 +192,7 @@ body {
   margin-top: 22px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 .navigation-container .arrow-left-wrapper,
 .navigation-container .menu-wrapper {
@@ -191,21 +202,18 @@ body {
 }
 .navigation-container .arrow-left-wrapper {
   border-radius: 6px;
-  border: 1px solid gray;
   margin-left: 5px;
   position: relative;
   z-index: 2;
-/*   background-color: black; */
   border: 1.8px solid black;
   box-shadow: 0px 0px 10px -2px rgba(87,87,87,1);
-Copy Text
 }
 .options-component > p {
   color: #fff;
   font-size: 21px;
   width: 90%;
   margin: auto;
-  
+  user-select: none;
 }
 .general-options-c {
   width: 90%;
@@ -213,6 +221,7 @@ Copy Text
   margin: auto;
   margin-top: 20px;
   border-radius: 6px;
+  user-select: none;
 }
 .general-options-c .heading {
   width: 100%;
@@ -228,6 +237,7 @@ Copy Text
   color: #fff;
   font-size: 13px;
   text-decoration: underline;
+  cursor: pointer;
 }
 .general-options-c .switches {
   font-size: 13px;
@@ -236,6 +246,66 @@ Copy Text
   border-radius: 6px;
   box-shadow: inset 0px -9px 12px -6px rgba(67,69,71,1), inset 0px 0px 5px -1px rgba(67,69,71,1);
 }
+.switch-w {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 52px;
+  height: 23px;
+}
+.switch-w input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #221F1F;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: -1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #EE6741;
+}
+input:not(:checked) + .slider:before {
+  background-color:  #4a4b4f;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px  #737B8C;
+}
+input:not(:focus) + .slider {
+  box-shadow: 0 0 1px  #737B8C;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
 .switches > div {
   height: 41px;
   display: flex;
@@ -251,18 +321,20 @@ Copy Text
 }
 
 .options-component .timer-length-c {
-  width: 90%;
+  width: 100%;
   margin: auto;
   color: #737B8C;
    font-size: 14px;
   margin-top: 15px;
   border-radius: 6px;
+  user-select: none;
 }
 .timer-length-c > p {
    font-size: 17px;
   height: 30px;
 }
 .timer-length-c .wrapper {
+  width: inherit;
   height: 128px;
   border-radius: 6px;
   box-shadow: inset 0px -9px 12px -6px rgba(67,69,71,1), inset 0px 0px 5px -1px rgba(67,69,71,1);
@@ -270,6 +342,7 @@ Copy Text
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
 
 }
 .timer-length-c .wrapper .focus-length-c,
@@ -297,7 +370,7 @@ Copy Text
   box-shadow: 0px 4px 10px 0px rgba(13,13,13,1),inset 0px 4px 10px -2px rgba(64,64,64,1);
 }
 
-.options-component > button {
+.options-component button {
   display: block;
   height: 40px;
   width: 60%;
@@ -311,6 +384,6 @@ Copy Text
   cursor: pointer;
   transition: .2s ease-in;
 }
-.options-component > button:hover {
+.options-component  button:hover {
   background-color: #EE6741;
 }
