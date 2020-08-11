@@ -23,7 +23,7 @@ body {
   font-family: sans-serif;
 }
 .container {
-  width: 60%;
+  width: 70%;
   margin: auto;
   display: flex;
   margin-top: 50px;
@@ -31,11 +31,11 @@ body {
 }
 /* left side component styles */
 .main-component {
-  border: 1px solid #737B8C;
   border-radius: 30px;
   width: 250px;
   height: 500px;
   user-select: none;
+  box-shadow: 9px 10px 14px -10px rgba(115,123,140,1),-10px 10px 14px -10px rgba(255,255,255,1);
 }
 .time-container {
   border: 1px solid transparent;
@@ -147,6 +147,27 @@ body {
   background-color: #737B8C;
   margin: 3px;
 }
+.play-pause-btn-c .half-circle-border {
+  position: absolute;
+  left: 128px;
+  bottom: 38px;
+  height: 90px;
+  width: 45px;
+  border-bottom-right-radius: 90px;
+  border-top-right-radius: 90px;
+  border: 1px solid #FF6A3B;
+  border-left: 0;
+}
+.play-pause-btn-c .half-circle-border:after {
+  content: ' ';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 100%;
+  left: -15px;
+  top: 80px;
+  background-color: #EE6741;
+}
 
 .progress-container {
   display: flex;
@@ -178,12 +199,12 @@ body {
 
 /* right-side component styles */
 .options-component {
-  border: 1px solid #737B8C;
   border-radius: 30px;
   width: 250px;
   height: 500px;
   background-color: #221F1F;
   font-family: 'Open Sans', sans-serif;
+  box-shadow: 9px 10px 14px -10px rgba(115,123,140,1),-10px 10px 14px -10px rgba(255,255,255,1);
 }
 .options-component .navigation-container {
   height: 50px;
@@ -386,4 +407,14 @@ input:checked + .slider:before {
 }
 .options-component  button:hover {
   background-color: #EE6741;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-component {
+    margin-bottom: 14px;
+  }
 }
